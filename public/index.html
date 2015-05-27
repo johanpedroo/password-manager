@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html ng-app="Login">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>Entrada</title>
+	<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="stylesheets/style.css">
+</head>
+<body ng-controller="LoginController">
+	
+		
+	<div class="contentBox">
+		<div class="text">
+			<h3 class="text"> Senhas </h3>
+		</div>
+		<form method="post">
+			<div class="TextLoginField">
+				<div>
+					<label for="user"><h6>E-mail :    </h6></label>
+					<input type="text" id="user" name="user" class="LoginField">
+				</div>
+				<div>
+					<label for="user"><h6>Senha :    </h6></label>
+					<input type="password" id="password" name="password" class="LoginField">
+				</div>
+				<div>
+					<input type="submit" value="Logar" class="btn btn-block btn-xs">
+				</div>
+
+			</div>
+		</form>
+
+	</div>	
+
+
+
+<script src="bower_components/angular/angular.min.js"></script>
+<script src="controllers/LoginController.js"></script>
+</body>
+</html>

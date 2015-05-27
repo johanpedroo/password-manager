@@ -1,0 +1,61 @@
+body{
+	background-color: #EEE;
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+}
+
+
+.contentBox{
+  min-height: 265px;
+  width: 500px;
+  background-color: #00638d;
+background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#606c88), color-stop(100%,#3f4c6b)); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(top, #606c88 0%,#3f4c6b 100%); /* Chrome10+,Safari5.1+ */
+  position: absolute;
+    top: 40%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%)
+
+}
+
+.text{
+	padding-top: 10px;
+	padding-left: 25px;
+	color: #FFFFFF
+}
+
+h3 {
+  display: block;
+  -webkit-margin-before: 0.67em;
+  -webkit-margin-after: 0.67em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: normal;
+}
+
+.LoginField{
+	border: 1px solid #EEE;
+	border-radius: 5px;
+	margin-left: 5px;
+	min-width: 235px;
+	max-width: 235px;
+	min-height: 22px;
+	max-height: 22px;
+}
+
+.TextLoginField{
+	margin-top: 20px;
+	padding-left: 80px;
+	color: #FFFFFF;
+}
+
+.btn-xs{
+	margin-top: 15px;
+	color: #000000;
+	box-shadow: 0 1px 3px rgba(50,50,50,0.75);
+  	border: 1px solid white;
+  	border-radius: 3px;
+  	max-width: 285px;
+}
