@@ -1,28 +1,34 @@
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var bodyParser = require('body-parser');
- 
-var app = express();
- 
-var allowCors = function(req, res, next){
-        res.header('Access-Control-Allow-Origin', '127.0.0.1:3000');
-        res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-        res.header('Access-Control-Allow-Headers', 'Content-Type');
-        res.header('Access-Control-Allow-Credentials', 'true');
- 
-        next();
- 
-};
-app.use(express.static(path.join(__dirname+'/public')));
- 
-app.listen(process.env.PORT || 3000, process.env.IP || "0.0.0.0", function(){
-  console.log("Rodando");
+var app = require('./app_config.js');
+var db = require('./db_config.js');
+var userController = require('./controllers/userController.js');
+var session;
+
+        
+app.post('/login', function (req, res){
+    var email = req.body.email;
+    var password = req.body.password;
+
+    loginController.user(email, password, function(err, user){
+        if(!err){
+            if(user.email){
+                req.session.user.email = user.email;
+                req.session.user.name = user.name;
+                req.session.user.logado = true;
+
+                res.json(req.session.user);
+            }
+            console.log(err);
+        }
+    });
 });
-app.use(allowCors);
- 
-app.use(bodyParser.json());
- 
-app.use(bodyParser.urlencoded({
-        extended: true
-}));
+
+app.get('/login', function (req, res){
+    if(req.session.user){
+        res.jsonp({
+            email:req.session.user.email,
+            logado:true
+        })
+    }else{
+        res.json({err:'Erro no login'})
+    }
+});

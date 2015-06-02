@@ -1,8 +1,8 @@
 body{
-	background-color: #EEE;
+  background-color: #EEE;
 	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    font-size: 14px;
-    line-height: 1.42857143;
+  font-size: 14px;
+  line-height: 1.42857143;
 }
 
 
@@ -10,14 +10,13 @@ body{
   min-height: 265px;
   width: 500px;
   background-color: #00638d;
-background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#606c88), color-stop(100%,#3f4c6b)); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(top, #606c88 0%,#3f4c6b 100%); /* Chrome10+,Safari5.1+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#606c88), color-stop(100%,#3f4c6b)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top, #606c88 0%,#3f4c6b 100%); /* Chrome10+,Safari5.1+ */
   position: absolute;
-    top: 40%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%)
-
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
 }
 
 .text{
@@ -43,6 +42,7 @@ h3 {
 	max-width: 235px;
 	min-height: 22px;
 	max-height: 22px;
+  color: #000000;
 }
 
 .TextLoginField{
@@ -55,7 +55,7 @@ h3 {
 	margin-top: 15px;
 	color: #000000;
 	box-shadow: 0 1px 3px rgba(50,50,50,0.75);
-  	border: 1px solid white;
-  	border-radius: 3px;
-  	max-width: 285px;
+	border: 1px solid white;
+	border-radius: 3px;
+	max-width: 285px;
 }
