@@ -2,12 +2,9 @@ var app = angular.module('app', ['ngRoute']);
 
 app.config(function($routeProvider) {
     $routeProvider
-
-    .when('/sys'){
+    
+    .when('/sys', {
         templateUrl: 'views/sys.html'
-    }
-    .otherwise({
-        redirectTo: '/'
     });
     
 });
