@@ -13,6 +13,7 @@ db.once('open', function(){
 		email:{type: String},
 		password:{type: Number}
 	});
+	module.exports.Users = mongoose.model('Users', Users);
 	
 	console.log("DB Rodando");
 

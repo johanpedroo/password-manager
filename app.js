@@ -8,14 +8,14 @@ app.post('/login', function (req, res){
     var email = req.body.email;
     var password = req.body.password;
 
-    userController.user(email, password, function(err, user){
+    userController.Users(email, password, function(err, Users){
         if(!err){
-            if(user.email){
-                req.session.user.email = user.email;
-                req.session.user.name = user.name;
-                req.session.user.logado = true;
+            if(Users.email){
+                req.session.Users.name = user.name;
+                req.session.Users.email = user.email;
+                req.session.Users.logado = true;
 
-                res.json(req.session.user);
+                res.json(req.session.Users);
             }
             res.json({err:'Error'});
         }
