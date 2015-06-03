@@ -18,7 +18,7 @@ app.config(function($routeProvider) {
 app.controller('login', function($rootScope, $scope, $http, $location){
 
     $scope.signin = function (){
-        $http.get('/login').then(function (res){
+        $http.post('/login').then(function (res){
             if(res.data.err){
                 $rootScope.session = {
                     logado:false

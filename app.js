@@ -8,7 +8,7 @@ app.post('/login', function (req, res){
     var email = req.body.email;
     var password = req.body.password;
 
-    loginController.user(email, password, function(err, user){
+    userController.user(email, password, function(err, user){
         if(!err){
             if(user.email){
                 req.session.user.email = user.email;
@@ -26,6 +26,7 @@ app.get('/login', function (req, res){
     if(req.session.user){
         res.jsonp({
             email:req.session.user.email,
+            name:req.session.user.name,
             logado:true
         })
     }else{
