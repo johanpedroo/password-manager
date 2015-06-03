@@ -9,6 +9,7 @@ app.post('/login', function (req, res){
     var password = req.body.password;
 
     userController.user(email, password, function(err, user){
+        console.log(user);
         if(!err){
             if(user.email){
                 req.session.user.name = user.name;
