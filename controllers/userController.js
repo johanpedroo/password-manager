@@ -12,3 +12,25 @@ exports.user = function (email, password, callback) {
     });
 
 }
+exports.save = function (email, password, name, callback) {
+    new db.Users({
+		'email': email,
+		'password':password,
+		'name':name
+	}).save(function(error,resultado){
+		if(error)
+			callback(error);
+		else
+			db.Users.find({}, function(error, res){
+			    console.log(res);
+				if(error){
+					callback({error:'Não foi possivel retornar os usuarios'});
+				}
+				else{
+					callback(res);
+				}
+			});
+			
+	});	
+
+}
