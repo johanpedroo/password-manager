@@ -9,7 +9,6 @@ app.post('/login', function (req, res){
     var password = req.body.password;
 
     userController.user(email, password, function(err, user){
-        console.log(user);
         if(!err){
             if(user.email){
                 req.session.user.name = user.name;
@@ -19,6 +18,19 @@ app.post('/login', function (req, res){
                 res.json(req.session.user);
             }
             res.json({err:'Error'});
+        }
+    });
+});
+
+app.post('/user', function (req, res){
+    var email = req.body.email;
+    var password = req.body.password;
+    var name = req.body.name;
+
+    userController.save(email, password, name, function(err, users){
+        if(!err){
+            console.log(users)
+            res.json(users);
         }
     });
 });
